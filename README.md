@@ -186,7 +186,8 @@ server {
 }
 ```
 
-### ✨ Activer la Configuration
+✨ **Activer la Configuration**
+
 La dernière étape consiste à activer votre configuration **NGINX** et à la redémarrer.
 
 Une fois que vous avez créé le fichier de configuration, activez-le en créant un lien symbolique :
@@ -210,7 +211,8 @@ Assurez-vous de lire le guide MySQL d'abord si vous souhaitez utiliser MySQL/Mar
 **SAUVEGARDEZ APP_KEY !**
 Sauvegardez votre clé de chiffrement (APP_KEY dans le fichier `.env`). Cela est utilisé comme clé de chiffrement pour toutes les données qui doivent être stockées en toute sécurité (par exemple, les clés API). Rangez-la quelque part en sécurité - pas seulement sur votre serveur. Si vous la perdez, toutes les données chiffrées sont irrécupérables, même si vous avez des sauvegardes de la base de données.
 
-### 🤚 Définir les Permissions
+🤚 **Définir les Permissions**
+
 L'étape suivante du processus d'installation consiste à définir les bonnes permissions sur les fichiers du panel afin que le serveur web puisse les utiliser correctement.
 
 ```
@@ -218,7 +220,8 @@ chmod -R 755 storage/* bootstrap/cache/
 chown -R www-data:www-data /var/www/pelican
 ```
 
-### 🕰️ Configuration de Crontab (facultatif)
+🕰️ **Configuration de Crontab (facultatif)**
+
 Nous devons créer une nouvelle tâche cron qui s'exécute chaque minute pour traiter des tâches spécifiques, telles que le nettoyage des sessions et les tâches planifiées.
 
 ```
@@ -226,7 +229,8 @@ sudo crontab -e -u www-data
 * * * * * php /var/www/pelican/artisan schedule:run >> /dev/null 2>&1
 ```
 
-### 🪛 Configuration du Service de Queue
+🪛 **Configuration du Service de Queue**
+
 Une fois que vous avez installé le panel et configuré le cron, la dernière étape est de configurer le service de queue. Cela peut être fait avec la commande ci-dessous.
 
 ```
@@ -285,6 +289,7 @@ Une fois que vous avez installé Wings et les composants requis, l'étape suivan
 Après avoir créé un nœud, cliquez dessus et il y aura un onglet appelé Configuration. Copiez le contenu du bloc de code, collez-le dans un nouveau fichier appelé `config.yml` dans `/etc/pelican` et enregistrez-le.
 
 🚀 **Démarrage de Wings**
+
 Pour démarrer Wings, exécutez simplement la commande ci-dessous, qui le démarrera en mode débogage. Une fois que vous aurez confirmé qu'il fonctionne sans erreurs, utilisez CTRL+C pour terminer le processus et le mettre en arrière-plan en suivant les instructions ci-dessous.
 
 ```
