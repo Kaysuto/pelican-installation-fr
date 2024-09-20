@@ -54,6 +54,25 @@ Si vous souhaitez utiliser **MySQL** ou **MariaDB** pour la base de données du 
 
 Enfin, pour certaines commandes pendant l'installation, vous aurez besoin de **curl**, **tar** et **unzip**.
 
+```
+# Installer PHP 8.3 et les extensions requises
+sudo apt-get update
+sudo apt-get install -y software-properties-common
+sudo add-apt-repository -y ppa:ondrej/php
+sudo apt-get install -y php8.3 php8.3-fpm php8.3-gd php8.3-mysql php8.3-mbstring php8.3-bcmath php8.3-xml php8.3-curl php8.3-zip php8.3-intl php8.3-sqlite3
+
+# Installer un serveur web (dans cet exemple, NGINX)
+sudo apt-get install -y nginx
+
+# Installer MySQL 8+ ou MariaDB 10.3+
+sudo apt-get install -y mysql-server
+# Ou
+sudo apt-get install -y mariadb-server
+
+# Installer les outils supplémentaires
+sudo apt-get install -y curl tar unzip
+```
+
 ## ⚠️ **Veuillez vous assurer d'avoir installé toutes les dépendances nécessaires avant de continuer !**
 
 ### 📁 Créer des Répertoires & Télécharger des Fichiers
