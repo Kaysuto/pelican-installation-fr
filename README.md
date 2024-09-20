@@ -238,6 +238,91 @@ sudo php artisan p:environment:queue-service
 ### 🖥️ Installateur Web
 Une fois que vous avez défini les permissions appropriées et créé le Cron & le Worker de Queue, continuez l'installation via l'interface web à l'adresse `<domain>/installer` ou `<ip>/installer`.
 
+### 🚀 Installation de Wings
+
+🧩 **Prérequis système**
+- ⚠️ Veuillez noter que certains hébergeurs installent un noyau modifié qui ne prend pas en charge certaines fonctionnalités de Docker requises pour le bon fonctionnement de Wings. Vérifiez votre noyau en exécutant `uname -r`. Si votre noyau se termine par `-xxxx-grs-ipv6-64` ou `-xxxx-mod-std-ipv6-64`, vous utilisez probablement un noyau non pris en charge. Contactez votre hébergeur et demandez un noyau non modifié.
+
+Pour exécuter **Wings**, vous aurez besoin d'un système Linux capable d'exécuter des conteneurs Docker. La plupart des VPS et presque tous les serveurs dédiés devraient être en mesure d'exécuter Docker, mais il existe des cas particuliers.
+
+Lorsque votre fournisseur utilise Virtuozzo, OpenVZ (ou OVZ) ou LXC, vous ne pourrez probablement pas exécuter Wings. Certains fournisseurs ont apporté les modifications nécessaires pour la virtualisation imbriquée afin de prendre en charge Docker. Demandez à l'équipe d'assistance de votre fournisseur pour vous en assurer. **KVM est garanti de fonctionner.**
+
+La façon la plus simple de vérifier est de taper `systemd-detect-virt`. Si le résultat ne contient pas `OpenVZ` ou `LXC`, cela devrait fonctionner. Le résultat de `none` apparaîtra lors de l'exécution sur du matériel dédié sans aucune virtualisation.
+
+🧫 **Installation de Docker**
+Pour une installation rapide de Docker CE, vous pouvez utiliser la commande ci-dessous :
+
+```
+curl -sSL https://get.docker.com/ | CHANNEL=stable sudo sh
+```
+
+Si la commande ci-dessus ne fonctionne pas, veuillez vous référer à la documentation officielle de Docker pour savoir comment installer Docker CE sur votre serveur.
+
+🧫 **Démarrer Docker au démarrage**
+Si vous utilisez un système d'exploitation avec systemd (Ubuntu 16+, Debian 8+, CentOS 7+), exécutez la commande ci-dessous pour que Docker démarre lorsque vous démarrez votre machine.
+
+```
+sudo systemctl enable --now docker
+```
+
+🍃 **Activation du swap**
+Sur la plupart des systèmes, Docker ne pourra pas configurer l'espace d'échange (swap) par défaut. Vous pouvez le confirmer en exécutant docker info et en recherchant la sortie de WARNING: No swap limit support près du bas.
+
+L'activation du swap est entièrement facultative, mais nous vous recommandons de le faire si vous hébergerez pour d'autres personnes et pour éviter les erreurs OOM.
+
+🍗 **Installation de Wings**
+La première étape pour installer Wings est de vous assurer que nous avons la structure de répertoires requise. Pour ce faire, exécutez les commandes ci-dessous, qui créeront le répertoire de base et téléchargeront l'exécutable Wings.
+
+```
+sudo mkdir -p /etc/pelican /var/run/wings
+curl -L -o /usr/local/bin/wings "https://github.com/pelican-dev/wings/releases/latest/download/wings_linux_$([[ "$(uname -m)" == "x86_64" ]] && echo "amd64" || echo "arm64")"
+sudo chmod u+x /usr/local/bin/wings
+```
+
+**Configuration**
+Une fois que vous avez installé Wings et les composants requis, l'étape suivante consiste à créer un nœud sur votre panneau installé. Accédez à la vue administrative de votre panneau, sélectionnez Nodes dans la barre latérale, et sur le côté droit, cliquez sur le bouton Créer un nouveau.
+
+Après avoir créé un nœud, cliquez dessus et il y aura un onglet appelé Configuration. Copiez le contenu du bloc de code, collez-le dans un nouveau fichier appelé `config.yml` dans `/etc/pelican` et enregistrez-le.
+
+Démarrage de Wings
+Pour démarrer Wings, exécutez simplement la commande ci-dessous, qui le démarrera en mode débogage. Une fois que vous aurez confirmé qu'il fonctionne sans erreurs, utilisez CTRL+C pour terminer le processus et le mettre en arrière-plan en suivant les instructions ci-dessous.
+
+```
+sudo wings --debug
+```
+Vous pouvez éventuellement ajouter le drapeau `--debug` pour exécuter Wings en mode débogage.
+
+**Mise en arrière-plan (avec systemd)**
+Exécuter Wings en arrière-plan est une tâche simple, assurez-vous simplement qu'il fonctionne sans erreurs avant de faire cela. Placez le contenu ci-dessous dans un fichier appelé `wings.service` dans le répertoire `/etc/systemd/system`.
+
+```
+[Unit]
+Description=Wings Daemon
+After=docker.service
+Requires=docker.service
+PartOf=docker.service
+
+[Service]
+User=root
+WorkingDirectory=/etc/pelican
+LimitNOFILE=4096
+PIDFile=/var/run/wings/daemon.pid
+ExecStart=/usr/local/bin/wings
+Restart=on-failure
+StartLimitInterval=180
+StartLimitBurst=30
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Ensuite, exécutez les commandes ci-dessous pour recharger systemd et démarrer Wings.
+
+```
+systemctl enable --now wings
+```
+
 Si vous rencontrez des problèmes, consultez la documentation de dépannage :
  - https://pelican.dev/docs/troubleshooting
  - Ou rejoignez mon serveur Discord : https://discord.gg/EYzUxYd9Pk
