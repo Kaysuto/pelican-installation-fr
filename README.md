@@ -22,7 +22,7 @@ Avant d'installer **Pelican**, vous devez configurer un tunnel Cloudflare "**Zer
      - Cochez l'option "**No TLS Verify**".
 5. **Assurez-vous que votre serveur web est configuré pour accepter les connexions SSL de Cloudflare.**
 
-Une fois ces étapes de configuration Cloudflare terminées, vous pourrez procéder à l'installation de Pelican et accéder à votre panel via le tunnel "Zero Trust".
+Une fois ces étapes de configuration Cloudflare terminées, vous pourrez procéder à **l'installation de Pelican** et accéder à votre panel via le tunnel "Zero Trust".
 
 
 ### 💽 Choisir un Système d'Exploitation (OS)
