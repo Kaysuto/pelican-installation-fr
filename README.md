@@ -346,6 +346,7 @@ systemctl enable --now wings
 
 Si vous rencontrez des problèmes, consultez la documentation de dépannage :
  - https://pelican.dev/docs/troubleshooting
+ - https://github.com/pelican-dev/panel
  - Ou rejoignez mon serveur Discord : https://discord.gg/EYzUxYd9Pk
  - Ou le serveur Discord officiel de Pelican : https://discord.gg/pelican-panel
 
