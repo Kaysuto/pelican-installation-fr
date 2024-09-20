@@ -2,7 +2,7 @@
 
 [![Discord](https://img.shields.io/discord/1027968386640117770?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/EYzUxYd9Pk)
 
-☕ Ces étapes sont une procédure d'installation du panneau de gestion Pelican, une solution open-source pour héberger des serveurs de jeux en ligne.
+☕ Ces étapes décrivent l'installation du panneau de gestion Pelican, une solution open-source.
  - ⚠️ Avant de commencer, veuillez lire attentivement la [documentation](https://pelican.dev/docs/). 
  - ⚠️ Une connaissance de base de Linux est également recommandée !
  - ⚠️ Veuillez noter que Pelican est actuellement en version bêta, ce qui signifie que certaines fonctionnalités peuvent changer ou être cassées entre les versions.
