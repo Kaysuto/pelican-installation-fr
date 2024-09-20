@@ -3,7 +3,7 @@
 ☕ Ces étapes décrivent l'installation du panneau de gestion Pelican, une solution open-source.
  - ⚠️ Avant de commencer, veuillez lire attentivement la [documentation](https://pelican.dev/docs/). 
  - ⚠️ Une connaissance de base de Linux est également recommandée !
- - ☕ Pelican est actuellement en version bêta, certaines fonctionnalités peuvent donc changer ou être cassées entre les versions.
+ - ⚠️ Pelican est actuellement en version bêta, certaines fonctionnalités peuvent donc changer ou être cassées entre les versions.
 
 ### 🌐 Configuration de Cloudflare
 Avant d'installer **Pelican**, vous devez configurer un tunnel Cloudflare "**Zero Trust**" pour sécuriser l'accès à votre panel :
