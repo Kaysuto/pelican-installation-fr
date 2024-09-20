@@ -236,7 +236,7 @@ sudo php artisan p:environment:queue-service
 ```
 
 ### 🖥️ Installateur Web
-Une fois que vous avez défini les permissions appropriées et créé le Cron & le Worker de Queue, continuez l'installation via l'interface web à l'adresse `<domain>/installer` ou `<ip>/installer`.
+Une fois que vous avez défini les permissions appropriées et créé le Cron & le Worker de Queue, continuez l'installation via l'interface web à l'adresse `<domaine>/installer` ou `<ip>/installer`.
 
 ### 🚀 Installation de Wings
 
@@ -291,6 +291,9 @@ Pour démarrer Wings, exécutez simplement la commande ci-dessous, qui le démar
 sudo wings --debug
 ```
 Vous pouvez éventuellement ajouter le drapeau `--debug` pour exécuter Wings en mode débogage.
+
+Vous devrez normalement avoir ceci dans <domaine>/admin/nodes :
+https://i.imgur.com/4DPyzE8.png
 
 **Mise en arrière-plan (avec systemd)**
 Exécuter Wings en arrière-plan est une tâche simple, assurez-vous simplement qu'il fonctionne sans erreurs avant de faire cela. Placez le contenu ci-dessous dans un fichier appelé `wings.service` dans le répertoire `/etc/systemd/system`.
