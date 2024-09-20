@@ -111,7 +111,7 @@ cd /etc/certs
 openssl req -new -newkey rsa:4096 -days 3650 -nodes -x509 -subj "/C=NA/ST=NA/L=NA/O=NA/CN=Generic SSL Certificate" -keyout privkey.pem -out fullchain.pem
 ```
 
-📝 **Configuration de Nginx**
+###📝 Configuration de Nginx
 
 **Tout d'abord, supprimez la configuration par défaut de NGINX.**
 
@@ -186,7 +186,7 @@ server {
 }
 ```
 
-✨ **Activer la Configuration**
+### ✨ Activer la Configuration
 
 La dernière étape consiste à activer votre configuration **NGINX** et à la redémarrer.
 
@@ -211,7 +211,7 @@ Assurez-vous de lire le guide MySQL d'abord si vous souhaitez utiliser MySQL/Mar
 **SAUVEGARDEZ APP_KEY !**
 Sauvegardez votre clé de chiffrement (APP_KEY dans le fichier `.env`). Cela est utilisé comme clé de chiffrement pour toutes les données qui doivent être stockées en toute sécurité (par exemple, les clés API). Rangez-la quelque part en sécurité - pas seulement sur votre serveur. Si vous la perdez, toutes les données chiffrées sont irrécupérables, même si vous avez des sauvegardes de la base de données.
 
-🤚 **Définir les Permissions**
+### 🤚 Définir les Permissions
 
 L'étape suivante du processus d'installation consiste à définir les bonnes permissions sur les fichiers du panel afin que le serveur web puisse les utiliser correctement.
 
@@ -220,7 +220,7 @@ chmod -R 755 storage/* bootstrap/cache/
 chown -R www-data:www-data /var/www/pelican
 ```
 
-🕰️ **Configuration de Crontab (facultatif)**
+### 🕰️ Configuration de Crontab (facultatif)
 
 Nous devons créer une nouvelle tâche cron qui s'exécute chaque minute pour traiter des tâches spécifiques, telles que le nettoyage des sessions et les tâches planifiées.
 
@@ -229,7 +229,7 @@ sudo crontab -e -u www-data
 * * * * * php /var/www/pelican/artisan schedule:run >> /dev/null 2>&1
 ```
 
-🪛 **Configuration du Service de Queue**
+### 🪛 Configuration du Service de Queue
 
 Une fois que vous avez installé le panel et configuré le cron, la dernière étape est de configurer le service de queue. Cela peut être fait avec la commande ci-dessous.
 
@@ -242,7 +242,7 @@ Une fois que vous avez défini les permissions appropriées et créé le Cron & 
 
 ### 🚀 Installation de Wings
 
-🧩 **Prérequis système**
+### 🧩 Prérequis système
 - ⚠️ Veuillez noter que certains hébergeurs installent un noyau modifié qui ne prend pas en charge certaines fonctionnalités de Docker requises pour le bon fonctionnement de Wings. Vérifiez votre noyau en exécutant `uname -r`. Si votre noyau se termine par `-xxxx-grs-ipv6-64` ou `-xxxx-mod-std-ipv6-64`, vous utilisez probablement un noyau non pris en charge. Contactez votre hébergeur et demandez un noyau non modifié.
 
 Pour exécuter **Wings**, vous aurez besoin d'un système Linux capable d'exécuter des conteneurs Docker. La plupart des VPS et presque tous les serveurs dédiés devraient être en mesure d'exécuter Docker, mais il existe des cas particuliers.
@@ -251,7 +251,7 @@ Lorsque votre fournisseur utilise Virtuozzo, OpenVZ (ou OVZ) ou LXC, vous ne pou
 
 La façon la plus simple de vérifier est de taper `systemd-detect-virt`. Si le résultat ne contient pas `OpenVZ` ou `LXC`, cela devrait fonctionner. Le résultat de `none` apparaîtra lors de l'exécution sur du matériel dédié sans aucune virtualisation.
 
-🧫 **Installation de Docker**
+### 🧫 Installation de Docker
 Pour une installation rapide de Docker CE, vous pouvez utiliser la commande ci-dessous :
 
 ```
@@ -260,20 +260,30 @@ curl -sSL https://get.docker.com/ | CHANNEL=stable sudo sh
 
 Si la commande ci-dessus ne fonctionne pas, veuillez vous référer à la [documentation officielle](https://docs.docker.com/) de Docker pour savoir comment installer Docker CE sur votre serveur.
 
-🧫 **Démarrer Docker au démarrage**
+### 🧫 Démarrer Docker au démarrage
 Si vous utilisez un système d'exploitation avec systemd (Ubuntu 16+, Debian 8+, CentOS 7+), exécutez la commande ci-dessous pour que Docker démarre lorsque vous démarrez votre machine.
 
 ```
 sudo systemctl enable --now docker
 ```
 
-🍃 **Activation du swap**
+### 🍃 Activation du swap
 
-Sur la plupart des systèmes, Docker ne pourra pas configurer l'espace d'échange (swap) par défaut. Vous pouvez le confirmer en exécutant docker info et en recherchant la sortie de WARNING: No swap limit support près du bas.
+Sur la plupart des systèmes, Docker ne pourra pas configurer l'espace d'échange (swap) par défaut. Vous pouvez le confirmer en exécutant docker info et en recherchant la sortie de `WARNING: No swap limit support` près du bas.
 
-L'activation du swap est entièrement facultative, mais nous vous recommandons de le faire si vous hébergerez pour d'autres personnes et pour éviter les erreurs OOM.
+🛑 L'activation du swap est entièrement facultative, mais nous vous recommandons de le faire si vous hébergerez pour d'autres personnes et pour éviter les erreurs OOM.
 
-🍗 **Installation de Wings**
+Pour activer le swap, ouvrez `/etc/default/grub` en tant qu'utilisateur root et trouvez la ligne commençant par `GRUB_CMDLINE_LINUX_DEFAULT`. Assurez-vous que la ligne inclut `swapaccount=1` quelque part à l'intérieur des guillemets.
+
+Ensuite, exécutez `sudo update-grub` suivi de `sudo reboot` pour redémarrer le serveur et avoir le swap activé. 
+
+Voici un exemple de ce à quoi la ligne devrait ressembler, ne copiez pas cette ligne textuellement. Elle comporte souvent des paramètres spécifiques au système d'exploitation.
+
+```
+GRUB_CMDLINE_LINUX_DEFAULT="swapaccount=1"
+```
+
+### 🍗 Installation de Wings
 
 La première étape pour installer Wings est de vous assurer que nous avons la structure de répertoires requise. Pour ce faire, exécutez les commandes ci-dessous, qui créeront le répertoire de base et téléchargeront l'exécutable Wings.
 
@@ -283,12 +293,12 @@ curl -L -o /usr/local/bin/wings "https://github.com/pelican-dev/wings/releases/l
 sudo chmod u+x /usr/local/bin/wings
 ```
 
-🔧 **Configuration**
+### 🔧 Configuration
 Une fois que vous avez installé Wings et les composants requis, l'étape suivante consiste à créer un nœud sur votre panneau installé. Accédez à la vue administrative de votre panneau, sélectionnez Nodes dans la barre latérale, et sur le côté droit, cliquez sur le bouton Créer un nouveau.
 
 Après avoir créé un nœud, cliquez dessus et il y aura un onglet appelé Configuration. Copiez le contenu du bloc de code, collez-le dans un nouveau fichier appelé `config.yml` dans `/etc/pelican` et enregistrez-le.
 
-🚀 **Démarrage de Wings**
+### 🚀 Démarrage de Wings
 
 Pour démarrer Wings, exécutez simplement la commande ci-dessous, qui le démarrera en mode débogage. Une fois que vous aurez confirmé qu'il fonctionne sans erreurs, utilisez CTRL+C pour terminer le processus et le mettre en arrière-plan en suivant les instructions ci-dessous.
 
@@ -301,7 +311,7 @@ Vous devrez normalement avoir ceci dans <domaine>/admin/nodes :
 ![alt text](https://i.imgur.com/4DPyzE8.png)
 
 
-🌓 **Mise en arrière-plan (avec systemd)**
+### 🌓 Mise en arrière-plan (avec systemd)
 
 Exécuter Wings en arrière-plan est une tâche simple, assurez-vous simplement qu'il fonctionne sans erreurs avant de faire cela. 
 
@@ -329,7 +339,7 @@ RestartSec=5s
 WantedBy=multi-user.target
 ```
 
-Ensuite, exécutez les commandes ci-dessous pour recharger systemd et démarrer Wings.
+Ensuite, exécutez les commandes ci-dessous pour recharger **systemd** et démarrer **Wings**.
 
 ```
 systemctl enable --now wings
