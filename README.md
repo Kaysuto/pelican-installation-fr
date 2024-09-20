@@ -21,7 +21,6 @@ Avant d'installer **Pelican**, vous devez configurer un tunnel Cloudflare "**Zer
 
 Une fois ces étapes de configuration Cloudflare terminées, vous pourrez procéder à **l'installation de Pelican** et accéder à votre panel via le tunnel "Zero Trust".
 
-
 ### 💽 Choisir un Système d'Exploitation (OS)
 **Pelican** fonctionne sur une large gamme de systèmes d'exploitation, donc choisissez celui avec lequel vous êtes le plus à l'aise. 
 
@@ -38,7 +37,7 @@ Une fois ces étapes de configuration Cloudflare terminées, vous pourrez procé
 | Debian                 | 11      | ⚠️       | Pas de support SQLite |
 |                        | 12      | ✅       |       |
 
-Le support SQLite dépend de `libsqlite3-0_3.35+` étant présent sur le système hôte. 
+Le support SQLite dépend de `libsqlite3-0_3.35+` étant présent sur le système hôte.
 
 **Ubuntu 20.04 et Debian 11 ne répondent pas à cette exigence.**
 
