@@ -201,7 +201,7 @@ Cette étape couvrira la configuration des sessions, du cache, des identifiants 
 Exécuter `php artisan p:environment:setup` créera automatiquement le fichier `.env` requis et générera une `APP_KEY` si elle n'existe pas.
 
 **Vous souhaitez utiliser MySQL/MariaDB ?**
-Assurez-vous de lire le guide MySQL d'abord si vous souhaitez utiliser MySQL/MariaDB au lieu de SQLite !
+Assurez-vous de lire le [guide MySQL](https://pelican.dev/docs/panel/advanced/mysql) d'abord si vous souhaitez utiliser MySQL/MariaDB au lieu de SQLite !
 
 
 **SAUVEGARDEZ APP_KEY !**
