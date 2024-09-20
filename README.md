@@ -235,6 +235,10 @@ sudo php artisan p:environment:queue-service
 ### 🖥️ Installateur Web
 Une fois que vous avez défini les permissions appropriées et créé le Cron & le Worker de Queue, continuez l'installation via l'interface web à l'adresse `<domain>/installer` ou `<ip>/installer`.
 
+Si vous rencontrez des problèmes, consultez la documentation de dépannage :
+# https://pelican.dev/docs/troubleshooting
+# Ou rejoignez mon serveur Discord : [![Discord](https://img.shields.io/discord/1027968386640117770?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/EYzUxYd9Pk)
+# Ou le serveur Discord officiel de Pelican : [![Discord](https://img.shields.io/discord/1027968386640117770?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/pelican-panel)
 
 **N'hésitez pas à me faire savoir si vous avez besoin d'autres modifications !**
 
