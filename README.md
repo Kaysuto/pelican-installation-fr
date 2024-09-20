@@ -120,10 +120,6 @@ rm /etc/nginx/sites-enabled/default
 Ensuite, créez un fichier appelé `pelican.conf` dans `/etc/nginx/sites-available/` et collez-y le contenu suivant, en remplaçant `<ip>` par votre adresse IP publique ou locale :
 
 ```
-nano /etc/nginx/sites-available/pelican.conf
-```
-
-```
 server_tokens off;
 
 server {
@@ -296,8 +292,11 @@ Vous devrez normalement avoir ceci dans <domaine>/admin/nodes :
 ![alt text](https://i.imgur.com/4DPyzE8.png)
 
 
-**Mise en arrière-plan (avec systemd)**
-Exécuter Wings en arrière-plan est une tâche simple, assurez-vous simplement qu'il fonctionne sans erreurs avant de faire cela. Placez le contenu ci-dessous dans un fichier appelé `wings.service` dans le répertoire `/etc/systemd/system`.
+🌓 **Mise en arrière-plan (avec systemd)**
+
+Exécuter Wings en arrière-plan est une tâche simple, assurez-vous simplement qu'il fonctionne sans erreurs avant de faire cela. 
+
+Placez le contenu ci-dessous dans un fichier appelé `wings.service` dans le répertoire `/etc/systemd/system`.
 
 ```
 [Unit]
