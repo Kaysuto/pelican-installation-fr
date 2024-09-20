@@ -19,7 +19,7 @@ Avant d'installer **Pelican**, vous devez configurer un tunnel Cloudflare "**Zer
      - Cochez l'option "**No TLS Verify**".
 6. **Assurez-vous que votre serveur web est configuré pour accepter les connexions SSL de Cloudflare.** 👉 [Configuration SSL](https://github.com/Kaysuto/pelican-installation-fr/blob/main/README.md#-configuration-du-serveur-web)
 
-Une fois ces étapes de configuration Cloudflare terminées, vous pourrez procéder à **l'installation de Pelican** et accéder à votre panel via le tunnel "Zero Trust".
+Une fois ces étapes de configuration Cloudflare terminées, vous pourrez procéder à **__l'installation de Pelican__** et accéder à votre panel via le tunnel "Zero Trust".
 
 ### 💽 Choisir un Système d'Exploitation (OS)
 **Pelican** fonctionne sur une large gamme de systèmes d'exploitation, donc choisissez celui avec lequel vous êtes le plus à l'aise. 
@@ -205,7 +205,10 @@ Assurez-vous de lire le [guide MySQL](https://pelican.dev/docs/panel/advanced/my
 
 
 **SAUVEGARDEZ APP_KEY !**
-Sauvegardez votre clé de chiffrement (APP_KEY dans le fichier `.env`). Cela est utilisé comme clé de chiffrement pour toutes les données qui doivent être stockées en toute sécurité (par exemple, les clés API). Rangez-la quelque part en sécurité - pas seulement sur votre serveur. Si vous la perdez, toutes les données chiffrées sont irrécupérables, même si vous avez des sauvegardes de la base de données.
+
+👉 Sauvegardez votre clé de chiffrement (APP_KEY dans le fichier `.env`). 
+
+Cela est utilisé comme clé de chiffrement pour toutes les données qui doivent être stockées en toute sécurité (par exemple, les clés API). Rangez-la quelque part en sécurité - pas seulement sur votre serveur. Si vous la perdez, toutes les données chiffrées sont irrécupérables, même si vous avez des sauvegardes de la base de données.
 
 ### 🤚 Définir les Permissions
 
