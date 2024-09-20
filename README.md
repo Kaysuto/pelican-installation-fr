@@ -17,7 +17,7 @@ Avant d'installer **Pelican**, vous devez configurer un tunnel Cloudflare "**Zer
 4. Configurez votre domaine pour qu'il pointe vers le tunnel Cloudflare (Public hostname) :
    - Créez une première redirection pour votre nom de domaine principal, par exemple : `pelican.votreserveur.fr`, qui doit pointer vers votre **IP**.
    - Créez une deuxième redirection pour le nœud, par exemple : `node.votreserveur.fr` avec le port `8080`.
-   - Dans ces deux redirections, ajoutez les paramètres supplémentaires d'application :
+   - Dans ces deux redirections, ajoutez les paramètres supplémentaires d'application (Additional application settings) :
      - Sous **TLS** - **Origin Server Name**, entrez votre **IP** publique.
      - Cochez l'option "**No TLS Verify**".
 5. Assurez-vous que votre serveur web est configuré pour accepter les connexions SSL de Cloudflare.
