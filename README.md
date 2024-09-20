@@ -219,7 +219,7 @@ chown -R www-data:www-data /var/www/pelican
 ```
 
 ### 🕰️ Configuration de Crontab (facultatif)
-Nous devons créer une nouvelle tâche cron qui s'exécute chaque minute pour traiter des tâches spécifiques, telles que le nettoyage des sessions et les tâches planifiées. Vous voudrez ouvrir votre crontab.
+Nous devons créer une nouvelle tâche cron qui s'exécute chaque minute pour traiter des tâches spécifiques, telles que le nettoyage des sessions et les tâches planifiées.
 
 ```
 sudo crontab -e -u www-data
