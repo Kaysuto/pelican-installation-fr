@@ -120,7 +120,10 @@ rm /etc/nginx/sites-enabled/default
 Ensuite, créez un fichier appelé `pelican.conf` dans `/etc/nginx/sites-available/` et collez-y le contenu suivant, en remplaçant `<ip>` par votre adresse IP publique ou locale :
 
 ```
-/etc/nginx/sites-available/pelican.conf
+nano /etc/nginx/sites-available/pelican.conf
+```
+
+```
 server_tokens off;
 
 server {
