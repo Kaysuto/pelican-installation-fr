@@ -113,7 +113,7 @@ openssl req -new -newkey rsa:4096 -days 3650 -nodes -x509 -subj "/C=NA/ST=NA/L=N
 
 📝 **Configuration de Nginx**
 
-Tout d'abord, supprimez la configuration par défaut de NGINX.
+**Tout d'abord, supprimez la configuration par défaut de NGINX.**
 
 ```
 rm /etc/nginx/sites-enabled/default
