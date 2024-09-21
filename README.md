@@ -293,10 +293,31 @@ sudo chmod u+x /usr/local/bin/wings
 ### 🔧 Configuration
 Une fois que vous avez installé Wings et les composants requis, l'étape suivante consiste à créer un nœud sur votre panel  installé. Accédez à la vue administrative de votre panel, sélectionnez Nodes dans la barre latérale, et sur le côté droit, cliquez sur le bouton Créer un nouveau.
 
-Après avoir créé un nœud, cliquez dessus et il y aura un onglet appelé Configuration. Copiez le contenu du bloc de code, collez-le dans un nouveau fichier appelé `config.yml` dans `/etc/pelican` et enregistrez-le.
+Après avoir créé un nœud avec le port 8080, cliquez dessus et il y aura un onglet appelé Configuration. Copiez le contenu du bloc de code, collez-le dans un nouveau fichier appelé `config.yml` dans `/etc/pelican` et enregistrez-le.
 
 ```
 nano /etc/pelican/config.yml
+```
+
+```
+debug: false
+uuid: 9e7fXXX595b-XXXX-4f6e-8adc-XXXX
+token_id: m9Gmhp8BXXXXXs
+token: XXXtXXXX
+api:
+  host: 0.0.0.0
+  port: 8080
+  ssl:
+    enabled: true
+    cert: /etc/certs/fullchain.pem
+    key: /etc/certs/privkey.pem
+  upload_limit: 1024
+system:
+  data: /var/lib/pelican/volumes
+  sftp:
+    bind_port: 2022
+allowed_mounts: []
+remote: 'https://pelican.clovergames.fr'
 ```
 
 N'oubliez pas de changer le port **8080** à **443** via l'interface web avant de passer à l'étape suivante ! Laissez le port **8080** dans le fichier config.yml, sinon cela ne fonctionnera pas avec le tunnel de Cloudflare. 😉
