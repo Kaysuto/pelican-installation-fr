@@ -198,7 +198,7 @@ L'environnement principal est facilement configuré à l'aide d'une seule comman
 
 Cette étape couvrira la configuration des sessions, du cache, des identifiants de base de données et de l'envoi d'e-mails.
 
-Exécuter `php artisan p:environment:setup` créera automatiquement le fichier `.env` requis et générera une `APP_KEY` si elle n'existe pas.
+⚠️ **Exécuter `php artisan p:environment:setup` créera automatiquement le fichier `.env` requis et générera une `APP_KEY` si elle n'existe pas.**
 
 **Vous souhaitez utiliser MySQL/MariaDB ?**
 Assurez-vous de lire le [guide MySQL](https://pelican.dev/docs/panel/advanced/mysql) d'abord si vous souhaitez utiliser MySQL/MariaDB au lieu de SQLite !
