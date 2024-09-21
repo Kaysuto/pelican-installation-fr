@@ -1,6 +1,6 @@
 # 🦅 Installation complète de Pelican | Version FR |  [![Discord](https://img.shields.io/discord/1027968386640117770?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/EYzUxYd9Pk)
 
-☕ Ces étapes décrivent l'installation du panneau de gestion Pelican, une solution open-source.
+☕ Ces étapes décrivent l'installation du panel de gestion Pelican, une solution open-source.
  - ⚠️ Avant de commencer, veuillez lire attentivement la [documentation](https://pelican.dev/docs/). 
  - ⚠️ Une connaissance de base de Linux est également recommandée !
  - ⚠️ Pelican est actuellement en version bêta, certaines fonctionnalités peuvent donc changer ou être cassées entre les versions.
@@ -291,7 +291,7 @@ sudo chmod u+x /usr/local/bin/wings
 ```
 
 ### 🔧 Configuration
-Une fois que vous avez installé Wings et les composants requis, l'étape suivante consiste à créer un nœud sur votre panneau installé. Accédez à la vue administrative de votre panneau, sélectionnez Nodes dans la barre latérale, et sur le côté droit, cliquez sur le bouton Créer un nouveau.
+Une fois que vous avez installé Wings et les composants requis, l'étape suivante consiste à créer un nœud sur votre panel  installé. Accédez à la vue administrative de votre panel, sélectionnez Nodes dans la barre latérale, et sur le côté droit, cliquez sur le bouton Créer un nouveau.
 
 Après avoir créé un nœud, cliquez dessus et il y aura un onglet appelé Configuration. Copiez le contenu du bloc de code, collez-le dans un nouveau fichier appelé `config.yml` dans `/etc/pelican` et enregistrez-le.
 
@@ -350,6 +350,19 @@ Ensuite, exécutez les commandes ci-dessous pour recharger **systemd** et démar
 systemctl enable --now wings
 ```
 
+### 🛠️ Configuration optionnelle
+
+Vous pouvez également **protéger** l'accès à une URL de votre panel, par exemple, si vous souhaitez protéger la **partie admin** (`pelican.votreserveur.fr/admin`), vous pouvez utiliser l'**Access** de CloudFlare "Zero Trust". 
+
+Pour ce faire, dirigez-vous dans la catégorie "**Access**" et "**Applications**", puis faites "**Add an application**". Sélectionnez "**Self-hosted**", mettez un nom à votre application, par exemple "**Pelican Secure**". 
+
+Dans la partie "**Application domain**", mettez votre sous-domaine (`pelican`), le nom de domaine (`votreserveur.fr`) et le path (`admin`). Descendez et cliquez sur "**Next**".
+
+Entrez un nom dans la partie "**Policy Name**", et dans "**Create additional rules**", ajoutez "**Ce que vous souhaitez**" comme moyen de connexion. Par exemple, choisissez "**Emails**" et indiquez vos mails qui seront autorisés à accéder au panel admin. Ensuite, cliquez sur "**Next**" et descendez encore, puis cliquez sur "**Add application**".
+
+🔒 **Maintenant, seuls les mails que vous avez indiqués pourront se connecter au panel admin.**
+
+
 Si vous rencontrez des problèmes, consultez la documentation de dépannage :
  - https://pelican.dev/docs/troubleshooting
  - https://github.com/pelican-dev/panel
@@ -357,8 +370,3 @@ Si vous rencontrez des problèmes, consultez la documentation de dépannage :
  - Ou le serveur Discord officiel de Pelican : https://discord.gg/pelican-panel
 
 **N'hésitez pas à me faire savoir si vous avez besoin d'autres modifications !**
-
-
-
-
-
