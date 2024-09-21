@@ -39,8 +39,6 @@ Une fois ces étapes de configuration Cloudflare terminées, vous pourrez procé
 
 Le support SQLite dépend de `libsqlite3-0_3.35+` étant présent sur le système hôte.
 
-**Ubuntu 20.04 et Debian 11 ne répondent pas à cette exigence.**
-
 ### 📌 Dépendances
 Pour le panel, vous devez installer PHP 8.3 (**recommandé**) ou 8.2, avec les extensions suivantes : 
 
