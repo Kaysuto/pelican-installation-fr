@@ -337,7 +337,7 @@ sudo wings --debug
 Vous pouvez éventuellement ajouter le drapeau `--debug` pour exécuter Wings en mode débogage.
 
 Vous devrez normalement avoir ceci dans <domaine>/admin/nodes :
-![alt text](https://i.imgur.com/4DPyzE8.png)
+![alt text](https://i.imgur.com/jdkTHRB.png)
 
 
 ### 🌓 Mise en arrière-plan (avec systemd)
