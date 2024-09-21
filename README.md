@@ -301,6 +301,8 @@ nano /etc/pelican/config.yml
 
 N'oubliez pas de changer le port **8080** à **443** via l'interface web avant de passer à l'étape suivante ! Laissez le port **8080** dans le fichier config.yml, sinon cela ne fonctionnera pas avec le tunnel de Cloudflare. 😉
 
+![alt text](https://i.imgur.com/4DPyzE8.png)
+
 ### 🚀 Démarrage de Wings
 
 Pour démarrer Wings, exécutez simplement la commande ci-dessous, qui le démarrera en mode débogage. Une fois que vous aurez confirmé qu'il fonctionne sans erreurs, utilisez CTRL+C pour terminer le processus et le mettre en arrière-plan en suivant les instructions ci-dessous.
@@ -311,7 +313,7 @@ sudo wings --debug
 Vous pouvez éventuellement ajouter le drapeau `--debug` pour exécuter Wings en mode débogage.
 
 Vous devrez normalement avoir ceci dans <domaine>/admin/nodes :
-![alt text](https://i.imgur.com/4DPyzE8.png)
+![alt text](https://i.imgur.com/BHeXa7F.png)
 
 
 ### 🌓 Mise en arrière-plan (avec systemd)
