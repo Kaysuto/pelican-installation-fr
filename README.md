@@ -62,7 +62,7 @@ sudo apt-get install -y php8.3 php8.3-fpm php8.3-gd php8.3-mysql php8.3-mbstring
 # Installer un serveur web (dans cet exemple, NGINX)
 sudo apt-get install -y nginx
 
-# Installer MySQL 8+ ou MariaDB 10.3+
+# Installer MySQL 8+ ou MariaDB 10.3+ (facultatif)
 sudo apt-get install -y mysql-server
 # Ou
 sudo apt-get install -y mariadb-server
