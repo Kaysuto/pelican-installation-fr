@@ -10,7 +10,7 @@ Avant d'installer **Pelican**, vous devez configurer un tunnel Cloudflare "**Zer
 
 1. Créez un compte [Cloudflare](https://dash.cloudflare.com/sign-up) si vous n'en avez pas déjà un.
 2. Une fois le compte Cloudflare créé, rendez-vous dans l'onglet "Domains" de votre compte Cloudflare et ajoutez votre nom de domaine, voici un [tuto vidéo pour le réaliser](https://www.youtube.com/watch?v=mKki2xuD_k4).
-4. Configurez un **nouveau tunnel** Cloudflare en suivant la [documentation officielle](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/tunnel-guide/).
+4. Configurez un **nouveau tunnel** Cloudflare en suivant la [documentation officielle](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/get-started/create-remote-tunnel/).
 5. Configurez votre domaine pour qu'il pointe vers le tunnel Cloudflare (`Public hostname`) :
    - Créez une première redirection pour votre nom de domaine principal, par exemple : `pelican.votreserveur.fr`, qui doit pointer vers votre **IP**.
    - Créez une deuxième redirection pour le nœud, par exemple : `node.votreserveur.fr` avec le port `8080`.
