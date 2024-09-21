@@ -295,6 +295,10 @@ Une fois que vous avez installé Wings et les composants requis, l'étape suivan
 
 Après avoir créé un nœud, cliquez dessus et il y aura un onglet appelé Configuration. Copiez le contenu du bloc de code, collez-le dans un nouveau fichier appelé `config.yml` dans `/etc/pelican` et enregistrez-le.
 
+```
+nano /etc/pelican/config.yml
+```
+
 ### 🚀 Démarrage de Wings
 
 Pour démarrer Wings, exécutez simplement la commande ci-dessous, qui le démarrera en mode débogage. Une fois que vous aurez confirmé qu'il fonctionne sans erreurs, utilisez CTRL+C pour terminer le processus et le mettre en arrière-plan en suivant les instructions ci-dessous.
