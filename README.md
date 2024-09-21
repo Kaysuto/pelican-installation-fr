@@ -299,6 +299,7 @@ Après avoir créé un nœud avec le port 8080, cliquez dessus et il y aura un o
 nano /etc/pelican/config.yml
 ```
 
+Exemple :
 ```
 debug: false
 uuid: 9e7fXXX595b-XXXX-4f6e-8adc-XXXX
