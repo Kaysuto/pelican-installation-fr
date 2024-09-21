@@ -52,21 +52,21 @@ Enfin, pour certaines commandes pendant l'installation, vous aurez besoin de **c
 
 ```
 # Installer PHP 8.3 et les extensions requises
-sudo apt-get update
-sudo apt-get install -y software-properties-common
-sudo add-apt-repository -y ppa:ondrej/php
-sudo apt-get install -y php8.3 php8.3-fpm php8.3-gd php8.3-mysql php8.3-mbstring php8.3-bcmath php8.3-xml php8.3-curl php8.3-zip php8.3-intl php8.3-sqlite3
+apt-get update
+apt-get install -y software-properties-common
+add-apt-repository -y ppa:ondrej/php
+apt-get install -y php8.3 php8.3-fpm php8.3-gd php8.3-mysql php8.3-mbstring php8.3-bcmath php8.3-xml php8.3-curl php8.3-zip php8.3-intl php8.3-sqlite3
 
 # Installer un serveur web (dans cet exemple, NGINX)
-sudo apt-get install -y nginx
+apt-get install -y nginx
 
 # Installer MySQL 8+ ou MariaDB 10.3+ (facultatif)
-sudo apt-get install -y mysql-server
+apt-get install -y mysql-server
 # Ou
-sudo apt-get install -y mariadb-server
+apt-get install -y mariadb-server
 
 # Installer les outils supplémentaires
-sudo apt-get install -y curl tar unzip
+apt-get install -y curl tar unzip
 ```
 
 ## ⚠️ **Veuillez vous assurer d'avoir installé toutes les dépendances nécessaires avant de continuer !**
@@ -83,15 +83,15 @@ Une fois que vous avez créé un nouveau répertoire et que vous vous y êtes d�
 Cela se fait simplement en utilisant **curl** pour télécharger la dernière version.
 
 ```
-curl -L https://github.com/pelican-dev/panel/releases/latest/download/panel.tar.gz | sudo tar -xzv
+curl -L https://github.com/pelican-dev/panel/releases/latest/download/panel.tar.gz | tar -xzv
 ```
 
 ### ⚙️ Installer Composer
 Ensuite, nous allons configurer Composer avec les dépendances requises.
 
 ```
-curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
-sudo composer install --no-dev --optimize-autoloader
+curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+composer install --no-dev --optimize-autoloader
 ```
 
 ### 🔧 Configuration du Serveur Web
@@ -187,7 +187,7 @@ La dernière étape consiste à activer votre configuration **NGINX** et à la r
 Une fois que vous avez créé le fichier de configuration, activez-le en créant un lien symbolique :
 
 ```
-sudo ln -s /etc/nginx/sites-available/pelican.conf /etc/nginx/sites-enabled/pelican.conf
+ln -s /etc/nginx/sites-available/pelican.conf /etc/nginx/sites-enabled/pelican.conf
 systemctl restart nginx
 ```
 
@@ -224,7 +224,7 @@ chown -R www-data:www-data /var/www/pelican
 Nous devons créer une nouvelle tâche cron qui s'exécute chaque minute pour traiter des tâches spécifiques, telles que le nettoyage des sessions et les tâches planifiées.
 
 ```
-sudo crontab -e -u www-data
+crontab -e -u www-data
 * * * * * php /var/www/pelican/artisan schedule:run >> /dev/null 2>&1
 ```
 
@@ -233,7 +233,7 @@ sudo crontab -e -u www-data
 Une fois que vous avez installé le panel et configuré le cron, la dernière étape est de configurer le service de queue. Cela peut être fait avec la commande ci-dessous.
 
 ```
-sudo php artisan p:environment:queue-service
+php artisan p:environment:queue-service
 ```
 
 ### 🖥️ Installateur Web
@@ -254,7 +254,7 @@ La façon la plus simple de vérifier est de taper `systemd-detect-virt`. Si le 
 Pour une installation rapide de Docker CE, vous pouvez utiliser la commande ci-dessous :
 
 ```
-curl -sSL https://get.docker.com/ | CHANNEL=stable sudo sh
+curl -sSL https://get.docker.com/ | CHANNEL=stable sh
 ```
 
 Si la commande ci-dessus ne fonctionne pas, veuillez vous référer à la [documentation officielle](https://docs.docker.com/) de Docker pour savoir comment installer [Docker CE](https://docs.docker.com/engine/install/) sur votre serveur.
@@ -263,7 +263,7 @@ Si la commande ci-dessus ne fonctionne pas, veuillez vous référer à la [docum
 Si vous utilisez un système d'exploitation avec systemd (Ubuntu 16+, Debian 8+, CentOS 7+), exécutez la commande ci-dessous pour que Docker démarre lorsque vous démarrez votre machine.
 
 ```
-sudo systemctl enable --now docker
+systemctl enable --now docker
 ```
 
 ### 🍃 Activation du swap
@@ -274,7 +274,7 @@ Sur la plupart des systèmes, Docker ne pourra pas configurer l'espace d'échang
 
 Pour activer le swap, ouvrez `/etc/default/grub` en tant qu'utilisateur root et trouvez la ligne commençant par `GRUB_CMDLINE_LINUX_DEFAULT`. Assurez-vous que la ligne inclut `swapaccount=1` quelque part à l'intérieur des guillemets.
 
-Ensuite, exécutez `sudo update-grub` suivi de `sudo reboot` pour redémarrer le serveur et avoir le swap activé. 
+Ensuite, exécutez `update-grub` suivi de `reboot` pour redémarrer le serveur et avoir le swap activé. 
 
 Voici un exemple de ce à quoi la ligne devrait ressembler, ne copiez pas cette ligne textuellement. Elle comporte souvent des paramètres spécifiques au système d'exploitation.
 
@@ -287,9 +287,9 @@ GRUB_CMDLINE_LINUX_DEFAULT="swapaccount=1"
 La première étape pour installer Wings est de vous assurer que nous avons la structure de répertoires requise. Pour ce faire, exécutez les commandes ci-dessous, qui créeront le répertoire de base et téléchargeront l'exécutable Wings.
 
 ```
-sudo mkdir -p /etc/pelican /var/run/wings
+mkdir -p /etc/pelican /var/run/wings
 curl -L -o /usr/local/bin/wings "https://github.com/pelican-dev/wings/releases/latest/download/wings_linux_$([[ "$(uname -m)" == "x86_64" ]] && echo "amd64" || echo "arm64")"
-sudo chmod u+x /usr/local/bin/wings
+chmod u+x /usr/local/bin/wings
 ```
 
 ### 🔧 Configuration
@@ -334,7 +334,7 @@ N'oubliez pas de changer le port **8080** à **443** via l'interface web avant d
 Pour démarrer Wings, exécutez simplement la commande ci-dessous, qui le démarrera en mode débogage. Une fois que vous aurez confirmé qu'il fonctionne sans erreurs, utilisez CTRL+C pour terminer le processus et le mettre en arrière-plan en suivant les instructions ci-dessous.
 
 ```
-sudo wings --debug
+wings --debug
 ```
 Vous pouvez éventuellement ajouter le drapeau `--debug` pour exécuter Wings en mode débogage.
 
