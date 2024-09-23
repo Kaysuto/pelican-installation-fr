@@ -268,7 +268,7 @@ systemctl enable --now docker
 
 ### 🍃 Activation du swap
 
-Sur la plupart des systèmes, Docker ne pourra pas configurer l'espace d'échange (swap) par défaut. Vous pouvez le confirmer en exécutant docker info et en recherchant la sortie de `WARNING: No swap limit support` près du bas.
+Sur la plupart des systèmes, Docker ne pourra pas configurer l'espace d'échange (swap) par défaut. Vous pouvez le confirmer en exécutant `docker info` et en recherchant la sortie de `WARNING: No swap limit support` près du bas.
 
 🛑 L'activation du swap est entièrement facultative, mais nous vous recommandons de le faire si vous hébergerez pour d'autres personnes et pour éviter les erreurs OOM.
 
