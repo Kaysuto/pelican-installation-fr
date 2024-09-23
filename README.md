@@ -1,4 +1,4 @@
-# 🦅 Installation complète de Pelican | Version FR |  [![Discord](https://img.shields.io/discord/1027968386640117770?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/EYzUxYd9Pk)
+# 🦅 Installation complète de Pelican | Version FR - [![Discord](https://img.shields.io/discord/1027968386640117770?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/EYzUxYd9Pk)
 
 ☕ Ces étapes décrivent l'installation du panel de gestion Pelican, une solution open-source.
  - ⚠️ Avant de commencer, veuillez lire attentivement la [documentation](https://pelican.dev/docs/). 
