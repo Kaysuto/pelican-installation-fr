@@ -30,12 +30,12 @@ Une fois ces étapes de configuration Cloudflare terminées, vous pourrez procé
 
 | Système d'Exploitation | Version | Supporté | Notes |
 |------------------------|---------|----------|-------|
-| Ubuntu                 | 20.04   | ⚠️       | Pas de support SQLite, EoL d'Ubuntu 20.04 en avril 2025, non recommandé |
-|                        | 22.04   | ✅       |       |
-|                        | 24.04   | ✅       | Documentation écrite en supposant Ubuntu 24.04 comme OS de base. |
-| Rocky Linux            | 9       | ✅       |       |
-| Debian                 | 11      | ⚠️       | Pas de support SQLite |
-|                        | 12      | ✅       |       |
+| Ubuntu                 | 20.04   |   ⚠️     | Pas de support SQLite, EoL d'Ubuntu 20.04 en avril 2025, non recommandé |
+|                        | 22.04   |   ✅     |       |
+|                        | 24.04   |   ✅     | Documentation écrite en supposant Ubuntu 24.04 comme OS de base. |
+| Rocky Linux            | 9       |   ✅     |       |
+| Debian                 | 11      |   ⚠️     | Pas de support SQLite |
+|                        | 12      |   ✅     |       |
 
 Le support SQLite dépend de `libsqlite3-0_3.35+` étant présent sur le système hôte.
 
