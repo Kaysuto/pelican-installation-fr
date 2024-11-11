@@ -303,6 +303,8 @@ Une fois que vous avez installé Wings et les composants requis, l'étape suivan
 
 Après avoir créé un nœud avec le port 8080, cliquez dessus et il y aura un onglet appelé "**Configuration File**". Copiez le contenu du bloc de code, collez-le dans un nouveau fichier appelé `config.yml` dans `/etc/pelican` et enregistrez-le.
 
+⚠️ N'oubliez pas de changer **cert** et **key** !
+
 ```
 nano /etc/pelican/config.yml
 ```
