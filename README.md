@@ -6,6 +6,8 @@
 - ☕ Une connaissance de base de Linux est également recommandée !
 - 🚧 Pelican est actuellement en version bêta, certaines fonctionnalités peuvent donc changer ou être cassées entre les versions.
 
+___
+
 ### 💽 Choisir un Système d'Exploitation (OS)
 **Pelican** fonctionne sur une large gamme de systèmes d'exploitation, donc choisissez celui avec lequel vous êtes le plus à l'aise. 
 
