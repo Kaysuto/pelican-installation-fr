@@ -387,7 +387,11 @@ ___
 
 ### 🛠️ Configuration optionnelle
 
-Vous pouvez également **protéger** l'accès à une URL de votre panel, par exemple, si vous souhaitez protéger la **partie admin** (`pelican.votreserveur.fr/admin`), vous pouvez utiliser l'**Access** de CloudFlare "Zero Trust". 
+Vous pouvez également **protéger** l'accès à une URL de votre panel, par exemple, si vous souhaitez protéger la **partie admin** (`pelican.votreserveur.fr/admin`), vous pouvez utiliser l'**Access** de CloudFlare "Zero Trust".
+
+Exemple :
+
+![alt text](https://i.imgur.com/nFfb6B0.png)
 
 Pour ce faire, dirigez-vous dans la catégorie "**Access**" et "**Applications**", puis faites "**Add an application**". Sélectionnez "**Self-hosted**", mettez un nom à votre application, par exemple "**Pelican Secure**". 
 
