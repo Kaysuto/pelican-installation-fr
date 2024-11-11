@@ -26,22 +26,6 @@ ___
 
 Le support SQLite dépend de `libsqlite3-0_3.35+` étant présent sur le système hôte.
 
-### 🌐 Configuration de Cloudflare
-Avant d'installer **Pelican**, vous devez configurer un tunnel Cloudflare "**Zero Trust**" pour sécuriser l'accès à votre panel :
-
-1. Créez un compte [Cloudflare](https://dash.cloudflare.com/sign-up) si vous n'en avez pas déjà un.
-2. Une fois le compte Cloudflare créé, rendez-vous dans l'onglet "Domains" de votre compte Cloudflare et ajoutez votre nom de domaine, voici un [tuto vidéo pour le réaliser](https://www.youtube.com/watch?v=mKki2xuD_k4).
-4. Configurez un **nouveau tunnel** Cloudflare en suivant la [documentation officielle](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/get-started/create-remote-tunnel/).
-5. Configurez votre domaine pour qu'il pointe vers le tunnel Cloudflare (`Public hostname`) :
-   - Créez une première redirection pour votre nom de domaine principal, par exemple : `pelican.votreserveur.fr`, qui doit pointer vers votre **IP locale**.
-   - Créez une deuxième redirection pour le nœud, par exemple : `node.votreserveur.fr` avec le port `8080`.
-   - Dans ces deux redirections, ajoutez les paramètres supplémentaires d'application (`Additional application settings`) :
-     - Sous **TLS** - **Origin Server Name**, entrez votre **IP** publique.
-     - Cochez l'option "**No TLS Verify**".
-6. **Assurez-vous que votre serveur web est configuré pour accepter les connexions SSL de Cloudflare.** 👉 [Configuration SSL](https://github.com/Kaysuto/pelican-installation-fr/blob/main/README.md#-configuration-du-serveur-web)
-
-Une fois ces étapes de configuration Cloudflare terminées, vous pourrez procéder à **__l'installation de Pelican__** et accéder à votre panel via le tunnel "Zero Trust".
-
 ### 📌 Dépendances
 Pour le panel, vous devez installer PHP 8.3 (**recommandé**) ou 8.2, avec les extensions suivantes : 
 
@@ -67,6 +51,22 @@ apt-get install -y mariadb-server
 ```
 
 ## ⚠️ **Veuillez vous assurer d'avoir installé toutes les dépendances nécessaires avant de continuer !**
+
+### 🌐 Configuration de Cloudflare
+Avant d'installer **Pelican**, vous devez configurer un tunnel Cloudflare "**Zero Trust**" pour sécuriser l'accès à votre panel :
+
+1. Créez un compte [Cloudflare](https://dash.cloudflare.com/sign-up) si vous n'en avez pas déjà un.
+2. Une fois le compte Cloudflare créé, rendez-vous dans l'onglet "Domains" de votre compte Cloudflare et ajoutez votre nom de domaine, voici un [tuto vidéo pour le réaliser](https://www.youtube.com/watch?v=mKki2xuD_k4).
+4. Configurez un **nouveau tunnel** Cloudflare en suivant la [documentation officielle](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/get-started/create-remote-tunnel/).
+5. Configurez votre domaine pour qu'il pointe vers le tunnel Cloudflare (`Public hostname`) :
+   - Créez une première redirection pour votre nom de domaine principal, par exemple : `pelican.votreserveur.fr`, qui doit pointer vers votre **IP locale**.
+   - Créez une deuxième redirection pour le nœud, par exemple : `node.votreserveur.fr` avec le port `8080`.
+   - Dans ces deux redirections, ajoutez les paramètres supplémentaires d'application (`Additional application settings`) :
+     - Sous **TLS** - **Origin Server Name**, entrez votre **IP** publique.
+     - Cochez l'option "**No TLS Verify**".
+6. **Assurez-vous que votre serveur web est configuré pour accepter les connexions SSL de Cloudflare.** 👉 [Configuration SSL](https://github.com/Kaysuto/pelican-installation-fr/blob/main/README.md#-configuration-du-serveur-web)
+
+Une fois ces étapes de configuration Cloudflare terminées, vous pourrez procéder à **__l'installation de Pelican__** et accéder à votre panel via le tunnel "Zero Trust".
 
 ### 📁 Créer des Répertoires & Télécharger des Fichiers
 La première étape de ce processus est de **créer** le dossier où le panel sera installé, puis de nous **déplacer** dans ce dossier nouvellement créé.
