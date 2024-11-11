@@ -113,7 +113,11 @@ openssl req -new -newkey rsa:4096 -days 3650 -nodes -x509 -subj "/C=NA/ST=NA/L=N
 rm /etc/nginx/sites-enabled/default
 ```
 
-Ensuite, créez un fichier appelé `pelican.conf` dans `/etc/nginx/sites-available/` et collez-y le contenu suivant, en remplaçant `<ip>` par votre adresse IP publique :
+Ensuite, créez un fichier appelé `pelican.conf` dans `/etc/nginx/sites-available/` et collez-y le contenu suivant, en remplaçant `<ip>` par votre adresse IP local :
+
+```
+nano /etc/nginx/sites-available/ pelican.conf
+```
 
 ```
 server_tokens off;
