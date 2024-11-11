@@ -243,6 +243,8 @@ php artisan p:environment:queue-service
 ### 🖥️ Installateur Web
 Une fois que vous avez défini les permissions appropriées et créé le Cron & le Worker de Queue, continuez l'installation via l'interface web à l'adresse `<domaine>/installer` ou `<ip>/installer`.
 
+- ✨ Un problème avec l'installation ? Utilisez ceci : https://pelican.dev/docs/panel/update
+
 ___
 
 ### 🚀 Installation de Wings
