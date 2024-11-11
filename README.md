@@ -1,9 +1,10 @@
 # 🦅 Installation complète de Pelican | Version FR - [![Discord](https://img.shields.io/discord/1027968386640117770?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/EYzUxYd9Pk)
 
 ☕ Ces étapes décrivent l'installation du panel de gestion Pelican, une solution open-source.
- - ⚠️ Avant de commencer, veuillez lire attentivement la [documentation](https://pelican.dev/docs/). 
- - ⚠️ Une connaissance de base de Linux est également recommandée !
- - ⚠️ Pelican est actuellement en version bêta, certaines fonctionnalités peuvent donc changer ou être cassées entre les versions.
+
+📗 Avant de commencer, veuillez lire attentivement la [documentation](https://pelican.dev/docs/). 
+⚠️ Une connaissance de base de Linux est également recommandée !
+🚧 Pelican est actuellement en version bêta, certaines fonctionnalités peuvent donc changer ou être cassées entre les versions.
 
 ### 🌐 Configuration de Cloudflare
 Avant d'installer **Pelican**, vous devez configurer un tunnel Cloudflare "**Zero Trust**" pour sécuriser l'accès à votre panel :
@@ -30,12 +31,12 @@ Une fois ces étapes de configuration Cloudflare terminées, vous pourrez procé
 
 | Système d'Exploitation | Version | Supporté | Notes |
 |------------------------|---------|----------|-------|
-| Ubuntu                 | 20.04   |   ⚠️     | Pas de support SQLite, EoL d'Ubuntu 20.04 en avril 2025, non recommandé |
-|                        | 22.04   |   ✅     |       |
-|                        | 24.04   |   ✅     | Documentation écrite en supposant Ubuntu 24.04 comme OS de base. |
-| Rocky Linux            | 9       |   ✅     |       |
-| Debian                 | 11      |   ⚠️     | Pas de support SQLite |
-|                        | 12      |   ✅     |       |
+| Ubuntu                 | 20.04   | ⚠️       | Pas de support SQLite, EoL d'Ubuntu 20.04 en avril 2025, non recommandé |
+|                        | 22.04   | ✅       |       |
+|                        | 24.04   | ✅       | Documentation écrite en supposant Ubuntu 24.04 comme OS de base. |
+| Rocky Linux            | 9       | ✅       |       |
+| Debian                 | 11      | ⚠️       | Pas de support SQLite |
+|                        | 12      | ✅       |       |
 
 Le support SQLite dépend de `libsqlite3-0_3.35+` étant présent sur le système hôte.
 
@@ -52,10 +53,7 @@ Enfin, pour certaines commandes pendant l'installation, vous aurez besoin de **c
 
 ```
 # Installer PHP 8.3 et les extensions requises
-apt-get update
-apt-get install -y software-properties-common
-add-apt-repository -y ppa:ondrej/php
-apt-get install -y php8.3 php8.3-fpm php8.3-gd php8.3-mysql php8.3-mbstring php8.3-bcmath php8.3-xml php8.3-curl php8.3-zip php8.3-intl php8.3-sqlite3
+apt-get update && apt-get install -y software-properties-common && add-apt-repository -y ppa:ondrej/php && apt-get update && apt-get install -y php8.3 php8.3-fpm php8.3-gd php8.3-mysql php8.3-mbstring php8.3-bcmath php8.3-xml php8.3-curl php8.3-zip php8.3-intl php8.3-sqlite3 curl tar unzip
 
 # Installer un serveur web (dans cet exemple, NGINX)
 apt-get install -y nginx
@@ -64,9 +62,6 @@ apt-get install -y nginx
 apt-get install -y mysql-server
 # Ou
 apt-get install -y mariadb-server
-
-# Installer les outils supplémentaires
-apt-get install -y curl tar unzip
 ```
 
 ## ⚠️ **Veuillez vous assurer d'avoir installé toutes les dépendances nécessaires avant de continuer !**
