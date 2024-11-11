@@ -50,7 +50,7 @@ apt-get install -y mysql-server
 apt-get install -y mariadb-server
 ```
 
-#### ⚠️ **Veuillez vous assurer d'avoir installé toutes les dépendances nécessaires avant de continuer !**
+#### ⚠️ **Veuillez vous assurer d'avoir installé toutes les dépendances avant de continuer !**
 
 ___
 
