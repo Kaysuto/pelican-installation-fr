@@ -260,7 +260,7 @@ curl -sSL https://get.docker.com/ | CHANNEL=stable sh
 
 Si la commande ci-dessus ne fonctionne pas, veuillez vous référer à la [documentation officielle](https://docs.docker.com/) de Docker pour savoir comment installer [Docker CE](https://docs.docker.com/engine/install/) sur votre serveur.
 
-### 🧫 Démarrer Docker au démarrage
+### 🧪 Démarrer Docker au démarrage
 Si vous utilisez un système d'exploitation avec systemd (Ubuntu 16+, Debian 8+, CentOS 7+), exécutez la commande ci-dessous pour que Docker démarre lorsque vous démarrez votre machine.
 
 ```
