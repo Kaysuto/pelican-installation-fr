@@ -52,6 +52,8 @@ apt-get install -y mariadb-server
 
 ## ⚠️ **Veuillez vous assurer d'avoir installé toutes les dépendances nécessaires avant de continuer !**
 
+___
+
 ### 🌐 Configuration de Cloudflare
 Avant d'installer **Pelican**, vous devez configurer un tunnel Cloudflare "**Zero Trust**" pour sécuriser l'accès à votre panel :
 
@@ -240,6 +242,8 @@ php artisan p:environment:queue-service
 ### 🖥️ Installateur Web
 Une fois que vous avez défini les permissions appropriées et créé le Cron & le Worker de Queue, continuez l'installation via l'interface web à l'adresse `<domaine>/installer` ou `<ip>/installer`.
 
+___
+
 ### 🚀 Installation de Wings
 
 ### 🧩 Prérequis système
@@ -378,6 +382,8 @@ Ensuite, exécutez les commandes ci-dessous pour recharger **systemd** et démar
 ```
 systemctl enable --now wings
 ```
+
+___
 
 ### 🛠️ Configuration optionnelle
 
